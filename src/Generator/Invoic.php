@@ -267,7 +267,7 @@ class Invoic extends Message
      */
     public function setTotalPositionsAmount($totalPositionsAmount)
     {
-        $this->totalPositionsAmount = self::addMOASegment('79', $totalPositionsAmount);
+        $this->totalPositionsAmount = static::addMOASegment('79', $totalPositionsAmount);
         return $this;
     }
 
@@ -285,7 +285,7 @@ class Invoic extends Message
      */
     public function setBasisAmount($basisAmount)
     {
-        $this->basisAmount = self::addMOASegment('56', $basisAmount);
+        $this->basisAmount = static::addMOASegment('56', $basisAmount);
         return $this;
     }
 
@@ -303,7 +303,7 @@ class Invoic extends Message
      */
     public function setTaxableAmount($taxableAmount)
     {
-        $this->taxableAmount = self::addMOASegment('125', $taxableAmount);
+        $this->taxableAmount = static::addMOASegment('125', $taxableAmount);
         return $this;
     }
 
@@ -321,7 +321,7 @@ class Invoic extends Message
      */
     public function setPayableAmount($payableAmount)
     {
-        $this->payableAmount = self::addMOASegment('9', $payableAmount);
+        $this->payableAmount = static::addMOASegment('9', $payableAmount);
         return $this;
     }
 
@@ -345,7 +345,7 @@ class Invoic extends Message
                 EdiFactNumber::convert($value, 0)
             ],
         ];
-        $this->taxAmount = self::addMOASegment('150', $amount);
+        $this->taxAmount = static::addMOASegment('150', $amount);
         return $this;
     }
 }

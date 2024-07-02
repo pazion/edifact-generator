@@ -86,7 +86,7 @@ class Item extends Base
      */
     public function setGrossPrice($grossPrice)
     {
-        $this->grossPrice = self::addPRISegment('GRP', $grossPrice);
+        $this->grossPrice = static::addPRISegment('GRP', $grossPrice);
         $this->addKeyToCompose('grossPrice');
         return $this;
     }
@@ -105,7 +105,7 @@ class Item extends Base
      */
     public function setNetPrice($netPrice)
     {
-        $this->netPrice = self::addPRISegment('NTP', $netPrice);
+        $this->netPrice = static::addPRISegment('NTP', $netPrice);
         $this->addKeyToCompose('netPrice');
         return $this;
     }
@@ -143,7 +143,7 @@ class Item extends Base
         }
 
         $index = 'discount' . $this->discountIndex++;
-        $this->{$index} = self::addMOASegment('8', abs($value));
+        $this->{$index} = static::addMOASegment('8', abs($value));
         $this->addKeyToCompose($index);
 
         return $this;
